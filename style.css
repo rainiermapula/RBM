@@ -1,0 +1,1049 @@
+/* Universal Styles */
+* {
+    margin: 0; /* Resets default margin */
+    padding: 0; /* Resets default padding */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    text-decoration: none; /* Removes underline from links */
+    border: none; /* Removes default borders */
+    outline: none; /* Removes outline on focus */
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Sets a modern sans-serif font stack */
+}
+
+
+/* Root Variables */
+:root {
+    --bg-color: #080808; /* Defines a dark background color */
+    --second-bg-color: #131313; /* Defines a slightly lighter dark background color */
+    --text-color: #fff; /* Defines white text color */
+    --main-color: #0096FF; /* Defines a vibrant blue main color */
+}
+
+
+/* HTML Base Styles */
+html {
+    font-size: 70%; /* Sets base font size, allowing for responsive scaling with rem units */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+
+/* Body Styles */
+body {
+    background: var(--bg-color); /* Applies the defined background color */
+    color: var(--text-color); /* Applies the defined text color */
+}
+
+
+/* Scrollbar Styles */
+/* Purpose: Customizes the appearance of the scrollbar */
+::-webkit-scrollbar {
+    width: 15px; /* Sets the width of the scrollbar */
+}
+
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color); /* Sets the background color of the scrollbar thumb */
+}
+
+
+/* Note: There's a duplicate rule here for ::-webkit-scrollbar-thumb. The second one overrides the first. */
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color); /* Sets the background color of the scrollbar thumb */
+    width: 50px; /* This width property applies to the thumb, but scrollbar width is already set by the track */
+}
+
+
+/* ******************Header Section********************* */
+/* Purpose: Styles the main navigation bar at the top of the page */
+.header {
+    position: fixed; /* Fixes the header to the top of the viewport */
+    top: 0; /* Aligns to the top */
+    left: 0; /* Aligns to the left */
+    width: 100%; /* Full width */
+    padding: 4rem 12% 4rem; /* Padding top/bottom and left/right */
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px); /* Applies a blur effect to content behind the header */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; /* Distributes items with space between them */
+    align-items: center; /* Centers items vertically */
+    z-index: 5; /* Ensures the header is above other content */
+}
+
+
+/* Logo Styles */
+.logo {
+    font-size: 3rem; /* Sets font size for the logo */
+    color: var(--text-color); /* Sets logo color to white */
+    font-weight: 800; /* Bold font weight */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: 0.3s ease; /* Smooth transition for hover effects */
+}
+
+
+.logo:hover {
+    transform: scale(1.1); /* Slightly scales up the logo on hover */
+}
+
+
+.logo span {
+    text-shadow: 0 0 25px var(--main-color); /* Adds a shadow to the span within the logo */
+}
+
+
+/* Navbar Links Styles */
+.navbar a {
+    font-size: 1.8rem; /* Sets font size for navigation links */
+    color: var(--text-color); /* Sets link color to white */
+    margin-left: 4rem; /* Adds left margin between links */
+    font-weight: 500; /* Medium font weight */
+    transition: 0.3s ease; /* Smooth transition for hover effects */
+    border-bottom: 3px solid transparent; /* Transparent bottom border for hover effect */
+}
+
+
+/* Navbar Link Hover and Active States */
+/* Purpose: Changes color and adds a bottom border on hover/active */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color); /* Changes link color to main color on hover/active */
+    border-bottom: 3px solid var(--main-color); /* Adds a solid bottom border on hover/active */
+}
+
+
+/* Menu Icon Styles (for mobile) */
+#menu-icon {
+    font-size: 3.6rem; /* Sets font size for the menu icon */
+    color: var(--main-color); /* Sets icon color to main color */
+    display: none; /* Hides the menu icon by default, only visible on smaller screens */
+}
+
+
+/* ******************Home Section********************* */
+/* Purpose: Styles the main hero section of the page */
+section {
+    min-height: 100vh; /* Ensures section takes at least full viewport height */
+    padding: 10rem 12% 10rem; /* Padding for content within the section */
+}
+
+
+.home {
+    display: flex; /* Uses flexbox for layout */
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    gap: 15rem; /* Adds space between flex items */
+}
+
+
+.home-content {
+    display: flex; /* Uses flexbox for layout */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+    text-align: left; /* Aligns text to the left */
+    justify-content: center; /* Centers content vertically */
+    margin-top: 3rem; /* Adds top margin */
+}
+
+
+/* Span Color */
+span {
+    color: var(--main-color); /* Sets color of span elements to main color */
+}
+
+
+/* Logo Span Color (overrides general span if it were different) */
+.logo span {
+    color: var(--main-color); /* Ensures logo span is main color */
+}
+
+
+.home-content h3 {
+    margin-bottom: 3rem; /* Adds bottom margin */
+    margin-top: 1rem; /* Adds top margin */
+    font-size: 3.5rem; /* Sets font size for h3 */
+}
+
+
+.home-content h1 {
+    font-size: 7rem; /* Sets large font size for h1 */
+    font-weight: 700; /* Bold font weight */
+    margin-top: 1.5rem; /* Adds top margin */
+    line-height: 1; /* Sets line height */
+}
+
+
+/* Home Image Container */
+.home-img {
+    border-radius: 50%; /* Makes the image container circular */
+}
+
+
+/* Home Image Styles */
+.home-img img {
+    position: relative; /* Allows positioning relative to its normal position */
+    top: 3rem; /* Moves image down slightly */
+    width: 28vw; /* Sets image width relative to viewport width */
+    border-radius: 50%; /* Makes the image circular */
+    box-shadow: 0 0 25px var(--main-color); /* Adds a shadow with main color */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: 0.4s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+/* Home Image Hover Effect */
+/* Purpose: Enhances shadow effect on image hover */
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color), /* Base shadow */
+                0 0 35px var(--main-color), /* Additional shadow */
+                0 0 55px var(--main-color); /* Even larger shadow */
+}
+
+
+.home-content p {
+    font-size: 1.5rem; /* Sets font size for paragraph */
+    font-weight: 500; /* Medium font weight */
+    line-height: 1.8; /* Sets line height */
+    max-width: 1000px; /* Limits paragraph width */
+}
+
+
+/* Social Icons Styles */
+.social-icons a {
+    display: inline-flex; /* Displays as inline-flex for centering content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    width: 4.5rem; /* Sets width */
+    height: 4.5rem; /* Sets height */
+    background: transparent; /* Transparent background */
+    border: 2px solid var(--main-color); /* Border with main color */
+    font-size: 2.5rem; /* Sets icon font size */
+    border-radius: 50%; /* Makes icons circular */
+    color: var(--main-color); /* Sets icon color to main color */
+    margin: 3rem 1.5rem 3rem 0; /* Margin around icons */
+    transition: 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+/* Social Icons Hover Effect */
+/* Purpose: Animates social icons on hover */
+.social-icons a:hover {
+    color: var(--text-color); /* Changes icon color to white */
+    transform: scale(1.3)translateY(-5px); /* Scales up and moves slightly up */
+    box-shadow: 0 0 25px var(--main-color); /* Adds shadow */
+    background-color: var(--main-color); /* Changes background color to main color */
+}
+
+
+/* Button Styles */
+.btn {
+    display: inline-block; /* Displays as inline-block */
+    padding: 1rem 2.8rem; /* Padding for the button */
+    background: var(--main-color); /* Background color is main color */
+    box-shadow: 0 0 25px var(--main-color); /* Adds a shadow */
+    border-radius: 4rem; /* Heavily rounded corners */
+    font-size: 1.6rem; /* Sets font size */
+    color: #080808; /* Dark text color for contrast */
+    border: 2px solid transparent; /* Transparent border */
+    letter-spacing: 0.1rem; /* Adds letter spacing */
+    font-weight: 600; /* Semi-bold font weight */
+    transition: 0.3s ease-in-out; /* Smooth transition for hover effect */
+    cursor: pointer; /* Changes cursor to pointer */
+}
+
+
+/* Button Hover Effect */
+/* Purpose: Animates the button on hover */
+.btn:hover {
+    transform: scale(1.05); /* Slightly scales up the button */
+    box-shadow: 0 0 40px var(--main-color); /* Enhances shadow */
+}
+
+
+/* Button Group Styles */
+.btn-group {
+    display: flex; /* Uses flexbox for layout */
+    align-items: center; /* Centers items vertically */
+    gap: 1.5rem; /* Adds space between buttons */
+}
+
+
+/* Second Button in Group (e.g., "Contact Me") */
+.btn-group a:nth-of-type(2) {
+    background-color: #080808; /* Dark background color */
+    color: var(--main-color); /* Text color is main color */
+    border: 2px solid var(--main-color); /* Border with main color */
+    box-shadow: 0 0 25px transparent; /* Transparent shadow initially */
+}
+
+
+/* Second Button Hover Effect */
+.btn-group a:nth-of-type(2):hover {
+    box-shadow: 0 0 25px var(--main-color); /* Adds shadow on hover */
+    background-color: var(--main-color); /* Changes background to main color */
+    color: #080808; /* Changes text color to dark */
+}
+
+
+/* Text Animation Styles */
+.text-animation {
+    font-size: 34px; /* Sets font size */
+    font-weight: 600; /* Semi-bold font weight */
+    min-width: 280px; /* Minimum width to prevent text from wrapping too early */
+}
+
+
+.text-animation span {
+    position: relative; /* Allows pseudo-elements to be positioned relative to this span */
+}
+
+
+/* Before pseudo-element for typing animation text */
+.text-animation span:before {
+    content: "Web Developer"; /* Initial content for the typing animation */
+    color: var(--main-color); /* Sets text color to main color */
+    animation: words 20s infinite; /* Applies a 20-second infinite animation named 'words' */
+}
+
+
+/* After pseudo-element for typing cursor */
+.text-animation span:after {
+    content: ""; /* Empty content for the cursor */
+    background-color: var(--bg-color); /* Background color matches the page background */
+    position: absolute; /* Absolute positioning */
+    width: calc(100% + 8px); /* Width slightly larger than content */
+    height: 100%; /* Full height */
+    border-left: 3px solid var(--bg-color); /* Border to simulate cursor */
+    right: -8px; /* Positions cursor to the right */
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite; /* Applies cursor blink and typing animations */
+}
+
+
+/* Keyframes for Cursor Animation */
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--main-color); /* Changes cursor color to main color */
+    }
+}
+
+
+/* Keyframes for Words Animation */
+/* Purpose: Cycles through different developer roles */
+@keyframes words {
+    0%,
+    20% {
+        content: "Frontend Developer"; /* First phrase */
+    }
+    21%,
+    40% {
+        content: "Backend Developer"; /* Second phrase */
+    }
+    41%,
+    60% {
+        content: "Blockchain Developer"; /* Third phrase */
+    }
+    61%,
+    80% {
+        content: "Web Designer"; /* Fourth phrase */
+    }
+    81%,
+    100% {
+        content: "Content Creator"; /* Fifth phrase */
+    }
+}
+
+
+/* Keyframes for Typing Animation */
+/* Purpose: Simulates typing and deleting text */
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0; /* Width becomes 0 to simulate deleting */
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px); /* Width returns to full to simulate typing */
+    }
+}
+
+
+
+
+
+/* ******************Education Section********************* */
+/* Purpose: Styles the education timeline section */
+.heading {
+    font-size: 8rem; /* Sets large font size for section headings */
+    text-align: center; /* Centers text */
+    margin: 5rem 0; /* Adds top and bottom margin */
+}
+
+
+.education {
+    padding: 100px 15px; /* Padding for the education section */
+    background: var(--second-bg-color); /* Applies the second background color */
+}
+
+
+.education h2 {
+    margin-bottom: 5rem; /* Adds bottom margin to h2 in education section */
+}
+
+
+.timeline-items {
+    max-width: 1200px; /* Limits maximum width */
+    margin: auto; /* Centers the timeline items horizontally */
+    display: flex; /* Uses flexbox */
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    position: relative; /* Allows positioning of child elements relative to this container */
+}
+
+
+/* Timeline Vertical Line */
+.timeline-items::before {
+    content: ""; /* Empty content for the vertical line */
+    position: absolute; /* Absolute positioning */
+    width: 5px; /* Width of the line */
+    height: 100%; /* Full height */
+    background-color: var(--main-color); /* Color of the line */
+    left: calc(50% - 1px); /* Centers the line vertically */
+}
+
+
+/* Individual Timeline Item */
+.timeline-item {
+    margin-bottom: 40px; /* Adds bottom margin between items */
+    width: 100%; /* Full width */
+    position: relative; /* Allows positioning of child elements relative to this item */
+}
+
+
+.timeline-item:last-child {
+    margin-bottom: 0; /* Removes bottom margin from the last item */
+}
+
+
+/* Odd Timeline Items (right side) */
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px); /* Pushes content to the right */
+    text-align: right; /* Aligns text to the right */
+}
+
+
+/* Even Timeline Items (left side) */
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px); /* Pushes content to the left */
+}
+
+
+/* Timeline Dot */
+.timeline-dot {
+    height: 21px; /* Height of the dot */
+    width: 21px; /* Width of the dot */
+    background-color: var(--main-color); /* Background color of the dot */
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color); /* Adds shadow to the dot */
+    position: absolute; /* Absolute positioning */
+    left: calc(50% - 8.9px); /* Centers the dot on the vertical line */
+    border-radius: 50%; /* Makes the dot circular */
+    top: 10px; /* Positions the dot from the top */
+}
+
+
+/* Timeline Date */
+.timeline-date {
+    font-size: 20px; /* Sets font size */
+    font-weight: 800; /* Extra bold font weight */
+    color: #fff; /* White text color */
+    margin: 6px 0 15px; /* Margin around the date */
+}
+
+
+/* Timeline Content Box */
+.timeline-content {
+    background-color: var(--bg-color); /* Background color */
+    border: 3px solid var(--main-color); /* Border with main color */
+    padding: 30px 50px; /* Padding inside the content box */
+    border-radius: 4rem; /* Rounded corners */
+    box-shadow: 0 0 10px var(--main-color); /* Adds a shadow */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+/* Timeline Content Hover Effect */
+.timeline-content:hover {
+    transform: scale(1.05); /* Slightly scales up on hover */
+    box-shadow: 0 0 25px var(--main-color); /* Enhances shadow */
+}
+
+
+.timeline-content h3 {
+    font-size: 20px; /* Sets font size for h3 */
+    color: #fff; /* White text color */
+    margin: 0 0 10px; /* Margin around h3 */
+    font-weight: 500; /* Medium font weight */
+}
+
+
+.timeline-content p {
+    color: #fff; /* White text color */
+    font-size: 13px; /* Sets font size for paragraph */
+    font-weight: 300; /* Light font weight */
+    line-height: 17px; /* Sets line height */
+}
+
+
+/* ******************Skills Section********************* */
+/* Purpose: Styles the skills or services section */
+.services {
+    background: var(--bg-color); /* Background color */
+    color: #080808; /* Dark text color (will be overridden in service-box) */
+}
+
+
+.services h2 {
+    margin-bottom: 5rem; /* Bottom margin for heading */
+    color: #fff; /* White text color for heading */
+}
+
+
+.services-container {
+    display: grid; /* Uses CSS Grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+    align-items: center; /* Centers items vertically */
+    gap: 2.5rem; /* Space between grid items */
+}
+
+
+.service-box {
+    background-color: var(--main-color); /* Background color of the box */
+    height: 300px; /* Fixed height for the box */
+    border-radius: 3rem; /* Rounded corners */
+    border: 5px solid transparent; /* Transparent border for hover effect */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: 0.4s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+.service-box:hover {
+    background: #fff; /* White background on hover */
+    color: #131313; /* Dark text color on hover */
+    border: 5px solid var(--main-color); /* Border with main color on hover */
+    transform: scale(1.03); /* Slightly scales up on hover */
+}
+
+
+.service-box .service-info {
+    display: flex; /* Uses flexbox for content within the box */
+    flex-direction: column; /* Stacks items vertically */
+    text-align: left; /* Aligns text to the left */
+    min-height: 200px; /* Minimum height for service info */
+    justify-content: left; /* Aligns content to the start (top) */
+    padding: 5rem 5rem; /* Padding inside the service info */
+}
+
+
+.service-info h4 {
+    font-size: 3.2rem; /* Sets font size for h4 */
+    font-weight: 800; /* Extra bold font weight */
+    line-height: 1.2; /* Sets line height */
+    padding-bottom: 1.2rem; /* Bottom padding for h4 */
+}
+
+
+.service-info p {
+    font-size: 1.6rem; /* Sets font size for paragraph */
+    font-weight: 600; /* Semi-bold font weight */
+    max-height: 100px; /* Maximum height for paragraph */
+    line-height: 1.7; /* Sets line height */
+    margin: auto; /* Centers paragraph vertically if there's extra space */
+}
+
+
+/* ******************Services Section********************* */
+/* Note: This section is a duplicate of the "Skills Section" above.
+   It has identical CSS rules. Consider if this is intended or a copy-paste error.
+   If it's for separate content, rename classes or combine where possible. */
+
+
+.services {
+    background: var(--bg-color);
+    color: #080808;
+}
+
+
+.services h2 {
+    margin-bottom: 5rem;
+    color: #fff;
+}
+
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+
+.service-box {
+    background-color: var(--main-color);
+    height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+
+.service-box:hover {
+    background: #fff;
+    color: #131313;
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+
+
+.service-box .service-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    min-height: 200px;
+    justify-content: left;
+    padding: 5rem 5rem;
+}
+
+
+.service-info h4 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    padding-bottom: 1.2rem;
+}
+
+
+.service-info p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+    margin: auto;
+}
+
+
+/* ******************Testimonials Section********************* */
+/* Purpose: Styles the client testimonials section */
+.testimonials {
+    background: var(--second-bg-color); /* Uses the second background color */
+}
+
+
+.testimonials-box {
+    background-size: cover; /* Ensures background image covers the area (if any) */
+    display: flex; /* Uses flexbox for layout */
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    flex-direction: column; /* Stacks items vertically */
+}
+
+
+.testimonials .heading {
+    margin-bottom: 5rem; /* Bottom margin for heading */
+}
+
+
+.testimonials-box img {
+    width: 15rem; /* Sets image width */
+    border-radius: 50%; /* Makes image circular */
+    border: 3px solid var(--main-color); /* Border with main color */
+    box-shadow: 0 0 25px var(--main-color); /* Adds shadow */
+}
+
+
+.wrapper {
+    display: grid; /* Uses CSS Grid for layout */
+    grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    gap: 3rem; /* Space between grid items */
+}
+
+
+.testimonial-item {
+    min-height: 490px; /* Minimum height for testimonial item */
+    max-width: 450px; /* Maximum width for testimonial item */
+    background: #080808; /* Dark background */
+    border: 3px solid rgba(238, 238, 238, 0.3); /* Semi-transparent light border */
+    border-radius: 2rem; /* Rounded corners */
+    margin: 0 2rem; /* Horizontal margin */
+    padding: 30px 60px; /* Padding inside the item */
+    cursor: pointer; /* Changes cursor to pointer */
+    display: flex; /* Uses flexbox for content */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    gap: 1.5rem; /* Space between content elements */
+    color: #fff; /* White text color */
+    transition: 0.4s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+.testimonial-item:hover {
+    border: 3px solid var(--main-color); /* Border with main color on hover */
+    transform: translateY(-10px)scale(1.03); /* Moves up and slightly scales up */
+    box-shadow: 0 0 50px var(--main-color); /* Enhances shadow */
+}
+
+
+.testimonial-item h2 {
+    font-size: 2.8rem; /* Sets font size for h2 */
+}
+
+
+.testimonial-item p {
+    font-size: 1.3rem; /* Sets font size for paragraph */
+}
+
+
+#star {
+    color: gold; /* Gold color for stars */
+    font-size: 2rem; /* Font size for stars */
+}
+
+
+/* ******************Contact Section********************* */
+/* Purpose: Styles the contact form section */
+.contact {
+    background-color: var(--bg-color); /* Background color */
+}
+
+
+.contact h2 {
+    margin-bottom: 3rem; /* Bottom margin for heading */
+    color: #fff; /* White text color for heading */
+}
+
+
+.contact form {
+    display: flex; /* Uses flexbox for form layout */
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    gap: 3rem; /* Space between form elements */
+    margin: 5rem auto; /* Top/bottom margin and auto horizontal margin for centering */
+    text-align: center; /* Centers text within the form */
+}
+
+
+.contact form .input-box {
+    display: flex; /* Uses flexbox for input boxes */
+    justify-content: center; /* Centers content horizontally */
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+}
+
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%; /* Full width */
+    padding: 2.5rem; /* Padding inside input/textarea */
+    font-size: 1.8rem; /* Sets font size */
+    color: var(--text-color); /* Text color */
+    background-color: var(--bg-color); /* Background color */
+    border-radius: 2rem; /* Rounded corners */
+    border: 2px solid var(--main-color); /* Border with main color */
+    margin: 1.5rem 0; /* Top/bottom margin */
+    resize: none; /* Prevents resizing of textarea */
+}
+
+
+.contact form .btn {
+    margin-top: 2rem; /* Top margin for the button */
+}
+
+
+/* ******************Footer Section********************* */
+/* Purpose: Styles the footer of the page */
+.footer {
+    position: relative; /* Relative positioning */
+    bottom: 0; /* Aligns to the bottom */
+    width: 100%; /* Full width */
+    padding: 40px 0; /* Top/bottom padding */
+    background-color: var(--second-bg-color); /* Background color */
+}
+
+
+.footer .social {
+    text-align: center; /* Centers social icons */
+    padding-bottom: 25px; /* Bottom padding */
+    color: var(--main-color); /* Text color for social icons (likely overridden by individual 'a' tags) */
+}
+
+
+.footer .social a {
+    font-size: 25px; /* Sets font size for icons */
+    color: var(--main-color); /* Color of the icons */
+    border: 2px solid var(--main-color); /* Border with main color */
+    width: 42px; /* Width of the icon container */
+    height: 42px; /* Height of the icon container */
+    line-height: 42px; /* Centers icon vertically */
+    display: inline-block; /* Inline block display */
+    text-align: center; /* Centers icon horizontally */
+    border-radius: 50%; /* Makes icons circular */
+    margin: 0 10px; /* Horizontal margin between icons */
+    transition: 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+.footer .social a:hover {
+    transform: scale(1.2)translateY(-10px); /* Scales up and moves up on hover */
+    background-color: var(--main-color); /* Changes background to main color */
+    color: #131313; /* Changes icon color to dark */
+    box-shadow: 0 0 25px var(--main-color); /* Adds shadow */
+}
+
+
+.footer .copyright {
+    margin-top: 20px; /* Top margin for copyright text */
+    text-align: center; /* Centers text */
+    font-size: 16px; /* Sets font size */
+    color: #fff; /* White text color */
+}
+
+
+/* *************Responsive Design Section***************** */
+/* Purpose: Adjusts styles for different screen sizes */
+
+
+/* Media Query for screens up to 1285px wide */
+@media (max-width:1285px) {
+    html {
+        font-size: 55%; /* Reduces base font size for smaller desktops/large tablets */
+    }
+    .services-container {
+        padding-bottom: 7rem; /* Adjusts padding */
+        grid-template-columns: repeat(2, 1fr); /* Maintains two columns */
+        margin: 0 5rem; /* Adjusts horizontal margin */
+    }
+}
+
+
+/* Media Query for screens up to 991px wide (medium tablets/laptops) */
+@media (max-width:991px) {
+    header { /* Note: This should be .header if targeting the defined header class */
+        padding: 2rem 3%; /* Adjusts header padding */
+    }
+    section {
+        padding: 10rem 3% 2rem; /* Adjusts section padding */
+    }
+    .timeline-items::before {
+        left: 7px; /* Adjusts vertical line position for smaller screens */
+    }
+    .timeline-item:nth-child(odd) {
+        padding-right: 0; /* Removes right padding */
+        text-align: left; /* Aligns text to the left */
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 37px; /* Standardizes left padding for both odd and even items */
+    }
+    .timeline-dot {
+        left: 0; /* Aligns dot to the left of the timeline line */
+    }
+    .services {
+        padding-bottom: 7rem; /* Adjusts services section padding */
+    }
+    .testimonials .wrapper {
+        grid-template-columns: repeat(1, 1fr); /* Changes testimonials to a single column */
+    }
+    .contact form {
+        flex-direction: column; /* Stacks contact form elements vertically */
+    }
+    .footer {
+        padding: 2rem 3%; /* Adjusts footer padding */
+    }
+}
+
+
+/* Media Query for screens up to 895px wide (smaller tablets) */
+@media (max-width:895px) {
+    #menu-icon {
+        display: block; /* Shows the menu icon */
+    }
+    .navbar {
+        position: absolute; /* Changes navbar positioning for mobile menu */
+        top: 100%; /* Positions below the header */
+        right: 0; /* Aligns to the right */
+        width: 50%; /* Sets width to 50% (initial idea) */
+        padding: 1rem 3%; /* Padding */
+        background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+        backdrop-filter: blur(20px); /* Blur effect */
+        border-bottom-left-radius: 2rem; /* Rounded bottom-left corner */
+        border-left: 2px solid var(--main-color); /* Left border */
+        border-bottom: 2px solid var(--main-color); /* Bottom border */
+        display: none; /* Hides navbar by default */
+        /* Duplicate and potentially conflicting rules below. The last one will apply. */
+        left: 0; /* Overwrites right:0, moves navbar to left */
+        width: 100%; /* Overwrites width:50%, sets full width */
+        padding: 1rem 3%; /* Duplicated padding */
+        background: var(--bg-color); /* Overwrites rgba background */
+        border-top: .1rem solid rgba(0, 0, 0, .2); /* Top border */
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2); /* Shadow */
+        display: none; /* Duplicated display:none */
+    }
+    .navbar.active {
+        display: block; /* Shows the navbar when it has the 'active' class */
+    }
+    .navbar a {
+        display: block; /* Makes navbar links block-level */
+        font-size: 2rem; /* Larger font size for mobile links */
+        margin: 3rem 0; /* Top/bottom margin for links */
+        color: #fff; /* White text color */
+    }
+    .home {
+        flex-direction: column-reverse; /* Reverses order of home content and image */
+        margin: 5rem 4rem; /* Adjusts margin */
+    }
+    .home-content h3 {
+        font-size: 2.5rem; /* Reduces h3 font size */
+    }
+    .home-content h1 {
+        font-size: 6rem; /* Reduces h1 font size */
+        margin-top: 1rem; /* Adjusts margin */
+    }
+    .home-content p {
+        max-width: 600px; /* Limits paragraph width */
+        margin: 0 auto; /* Centers paragraph */
+    }
+    .home-img img {
+        width: 56vw; /* Adjusts image width */
+    }
+    .services h2 {
+        margin-bottom: 3rem; /* Adjusts h2 margin */
+    }
+    .services-container {
+        grid-template-columns: repeat(1, 1fr); /* Changes services to a single column */
+    }
+}
+
+
+/* Media Query for screens up to 426px wide (mobile phones) */
+@media (max-width:426px) {
+    .home-content h3 {
+        font-size: 2.5rem; /* Maintains h3 font size */
+    }
+    .home-content h1 {
+        font-size: 5rem; /* Further reduces h1 font size */
+        margin-top: 1rem; /* Adjusts margin */
+    }
+    .heading {
+        font-size: 4rem; /* Reduces general heading font size */
+        text-align: center; /* Centers text */
+        margin: 2rem 0; /* Adjusts margin */
+    }
+}
+
+
+
+
+/* Login Form Styles */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-color);
+    padding: 2rem;
+}
+
+.login form {
+    background: var(--second-bg-color);
+    padding: 3rem 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 30px var(--main-color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login form h2 {
+    color: var(--text-color);
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}
+
+.login input {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    transition: 0.3s ease;
+}
+
+.login input:focus {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.login button {
+    padding: 1rem;
+    background: var(--main-color);
+    color: #080808;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login button:hover {
+    background: #007be5;
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* Optional: Animate form on load */
+.login form {
+    animation: slideIn 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#logout-btn {
+    background-color: transparent;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#logout-btn:hover {
+    background-color: var(--main-color);
+    color: #080808;
+    box-shadow: 0 0 10px var(--main-color);
+}
